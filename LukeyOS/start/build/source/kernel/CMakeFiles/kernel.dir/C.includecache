@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../source/common/types.h
+
+../source/kernel/include/core/task.h
+common/types.h
+../source/kernel/include/core/common/types.h
+cpu/cpu.h
+../source/kernel/include/core/cpu/cpu.h
+tools/list.h
+../source/kernel/include/core/tools/list.h
+
+../source/kernel/include/cpu/cpu.h
+common/types.h
+../source/kernel/include/cpu/common/types.h
+
+../source/kernel/include/tools/list.h
+
+../source/kernel/include/tools/log.h
+
+/home/os/workspace/LukeyOS/start/source/kernel/init/first_task.c
+core/task.h
+/home/os/workspace/LukeyOS/start/source/kernel/init/core/task.h
+tools/log.h
+/home/os/workspace/LukeyOS/start/source/kernel/init/tools/log.h
+

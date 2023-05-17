@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/os/workspace/LukeyOS/start/source/boot/boot.h
+
+/home/os/workspace/LukeyOS/start/source/boot/start.S
+boot.h
+/home/os/workspace/LukeyOS/start/source/boot/boot.h
+
