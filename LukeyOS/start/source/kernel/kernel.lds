@@ -10,10 +10,10 @@ SECTIONS
 	PROVIDE(s_text = .);	
 	.text : {
 		/* EXCLUDE_FILE 依次放置内核的代码和只读数据，但不包括first_task进程的这些东西 */
-		*(EXCLUDE_FILE(*first_task*) .text)	
+		*(EXCLUDE_FILE(*first_task* *lib_syscall*) .text)	
 	}
 	.rodata : {
-		*(EXCLUDE_FILE(*first_task*) .rodata)
+		*(EXCLUDE_FILE(*first_task* *lib_syscall*) .rodata)
 	}
 	PROVIDE(e_text = .);
 	/* ===============================从64KB 开始的只读区域.text和.rodata=================================== */
@@ -23,10 +23,10 @@ SECTIONS
 	. = ALIGN(4096);
 	PROVIDE(s_data = .);
 	.data : {
-		*(EXCLUDE_FILE(*first_task*) .data)
+		*(EXCLUDE_FILE(*first_task* *lib_syscall*) .data)
 	}
 	.bss : {
-		*(EXCLUDE_FILE(*first_task*) .bss)
+		*(EXCLUDE_FILE(*first_task* *lib_syscall*) .bss)
 	}
 	/*  内核数据结束地址 */
 	e_data = .;
@@ -40,6 +40,7 @@ SECTIONS
 	.first_task : AT(e_data) {
 		*first_task_entry*(.text .data. rodata .data)
 		*first_task*(.text .data. rodata .data)
+		*lib_syscall*(.text .data .bss)
 	}
 	/* 获取first_task结束地址 */
 	e_first_task = LOADADDR(.first_task) + SIZEOF(.first_task);

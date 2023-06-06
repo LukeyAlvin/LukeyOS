@@ -1,4 +1,4 @@
-# Install script for directory: /home/os/workspace/LukeyOS/start/source/loader
+# Install script for directory: /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

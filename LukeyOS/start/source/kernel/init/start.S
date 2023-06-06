@@ -109,3 +109,71 @@ exception_handler smd_exception, 19, 0
 exception_handler virtual_exception, 20, 0
 // 硬件中断
 exception_handler timer, 0x20, 0
+exception_handler kbd, 0x21, 0
+
+
+// eax, ecx, edx由调用者自动保存
+// ebx, esi, edi, ebp需要由被调用者保存和恢复
+// cs/ds/es/fs/gs/ss不用保存，因为都是相同的
+// esp不用保存，只需要让esp保存在调用之前的状态
+// eflags ?
+	.text
+	.global simple_switch
+simple_switch:
+	movl 4(%esp), %eax   // 取from->stack
+	movl 8(%esp), %edx   // 取to->stack
+
+	// 保存前一任务的状态
+	push %ebp
+	push %ebx
+	push %esi
+	push %edi
+
+	// 切换栈
+	mov %esp, (%eax)    // from->stack = esp
+  	mov %edx, %esp      // esp = to->stack
+
+	// 加载下一任务的栈
+	pop %edi
+	pop %esi
+	pop %ebx
+	pop %ebp
+  	ret
+
+// 保存当前进程的状态，然后使用特权级0的内核段寄存器，
+// 调用内核的系统调用处理函数，最后恢复进程的状态并返回。
+    .global exception_handler_syscall
+    .extern do_handler_syscall
+exception_handler_syscall:
+	// 保存前一任务的状态
+	// 使用pusha指令保存通用寄存器eax、ecx、edx、ebx、esp、ebp、esi和edi的值
+	pusha
+	// 使用push指令将段寄存器ds、es、fs、gs和标志寄存器eflags的值压入栈中，以保护它们的状态
+	push %ds
+	push %es
+	push %fs
+	push %gs
+	pushf
+
+	// 将内核段寄存器ds、es、fs和gs的值设置为内核数据段的选择子，以确保在系统调用处理程序中使用内核数据段
+	mov $(KERNEL_SELECTOR_DS), %eax
+	mov %eax, %ds
+	mov %eax, %es
+	mov %eax, %fs
+	mov %eax, %gs
+
+    // 调用处理函数
+    mov %esp, %eax
+    push %eax
+	call do_handler_syscall		// 使用call指令调用系统调用处理函数do_handler_syscall，以处理系统调用请求
+	add $4, %esp				// 将栈顶指针恢复到正确的位置
+
+    // 再切换回来
+	popf
+	pop %gs
+	pop %fs
+	pop %es
+	pop %ds
+	popa
+	// 5个参数，加上5*4，不加会导致返回时ss取不出来，最后返回出现问题
+    retf $(5*4)    // CS发生了改变，需要使用远跳转

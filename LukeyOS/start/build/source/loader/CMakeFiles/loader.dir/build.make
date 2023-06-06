@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/os/workspace/LukeyOS/start
+CMAKE_SOURCE_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/os/workspace/LukeyOS/start/build
+CMAKE_BINARY_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start/build
 
 # Include any dependencies generated for this target.
 include source/loader/CMakeFiles/loader.dir/depend.make
@@ -59,34 +59,34 @@ include source/loader/CMakeFiles/loader.dir/flags.make
 
 source/loader/CMakeFiles/loader.dir/start.S.o: source/loader/CMakeFiles/loader.dir/flags.make
 source/loader/CMakeFiles/loader.dir/start.S.o: ../source/loader/start.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building ASM object source/loader/CMakeFiles/loader.dir/start.S.o"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/loader.dir/start.S.o -c /home/os/workspace/LukeyOS/start/source/loader/start.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building ASM object source/loader/CMakeFiles/loader.dir/start.S.o"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/loader.dir/start.S.o -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/start.S
 
 source/loader/CMakeFiles/loader.dir/loader_16.c.o: source/loader/CMakeFiles/loader.dir/flags.make
 source/loader/CMakeFiles/loader.dir/loader_16.c.o: ../source/loader/loader_16.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/loader/CMakeFiles/loader.dir/loader_16.c.o"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/loader.dir/loader_16.c.o   -c /home/os/workspace/LukeyOS/start/source/loader/loader_16.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/loader/CMakeFiles/loader.dir/loader_16.c.o"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/loader.dir/loader_16.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_16.c
 
 source/loader/CMakeFiles/loader.dir/loader_16.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/loader.dir/loader_16.c.i"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/os/workspace/LukeyOS/start/source/loader/loader_16.c > CMakeFiles/loader.dir/loader_16.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_16.c > CMakeFiles/loader.dir/loader_16.c.i
 
 source/loader/CMakeFiles/loader.dir/loader_16.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/loader.dir/loader_16.c.s"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/os/workspace/LukeyOS/start/source/loader/loader_16.c -o CMakeFiles/loader.dir/loader_16.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_16.c -o CMakeFiles/loader.dir/loader_16.c.s
 
 source/loader/CMakeFiles/loader.dir/loader_32.c.o: source/loader/CMakeFiles/loader.dir/flags.make
 source/loader/CMakeFiles/loader.dir/loader_32.c.o: ../source/loader/loader_32.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object source/loader/CMakeFiles/loader.dir/loader_32.c.o"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/loader.dir/loader_32.c.o   -c /home/os/workspace/LukeyOS/start/source/loader/loader_32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object source/loader/CMakeFiles/loader.dir/loader_32.c.o"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/loader.dir/loader_32.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_32.c
 
 source/loader/CMakeFiles/loader.dir/loader_32.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/loader.dir/loader_32.c.i"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/os/workspace/LukeyOS/start/source/loader/loader_32.c > CMakeFiles/loader.dir/loader_32.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_32.c > CMakeFiles/loader.dir/loader_32.c.i
 
 source/loader/CMakeFiles/loader.dir/loader_32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/loader.dir/loader_32.c.s"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/os/workspace/LukeyOS/start/source/loader/loader_32.c -o CMakeFiles/loader.dir/loader_32.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_32.c -o CMakeFiles/loader.dir/loader_32.c.s
 
 # Object files for target loader
 loader_OBJECTS = \
@@ -102,11 +102,11 @@ source/loader/loader: source/loader/CMakeFiles/loader.dir/loader_16.c.o
 source/loader/loader: source/loader/CMakeFiles/loader.dir/loader_32.c.o
 source/loader/loader: source/loader/CMakeFiles/loader.dir/build.make
 source/loader/loader: source/loader/CMakeFiles/loader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable loader"
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/loader.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && objcopy -O binary loader.elf /home/os/workspace/LukeyOS/start/../image/loader.bin
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && objdump -x -d -S -m i8086 /home/os/workspace/LukeyOS/start/build/source/loader/loader.elf > loader_dis.txt
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && readelf -a /home/os/workspace/LukeyOS/start/build/source/loader/loader.elf > loader_elf.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable loader"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/loader.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && objcopy -O binary loader.elf /home/alvin/workspace/LukeyOS/LukeyOS/start/../image/loader.bin
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && objdump -x -d -S -m i8086 /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/loader.elf > loader_dis.txt
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && readelf -a /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/loader.elf > loader_elf.txt
 
 # Rule to build all files generated by this target.
 source/loader/CMakeFiles/loader.dir/build: source/loader/loader
@@ -114,10 +114,10 @@ source/loader/CMakeFiles/loader.dir/build: source/loader/loader
 .PHONY : source/loader/CMakeFiles/loader.dir/build
 
 source/loader/CMakeFiles/loader.dir/clean:
-	cd /home/os/workspace/LukeyOS/start/build/source/loader && $(CMAKE_COMMAND) -P CMakeFiles/loader.dir/cmake_clean.cmake
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader && $(CMAKE_COMMAND) -P CMakeFiles/loader.dir/cmake_clean.cmake
 .PHONY : source/loader/CMakeFiles/loader.dir/clean
 
 source/loader/CMakeFiles/loader.dir/depend:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/os/workspace/LukeyOS/start /home/os/workspace/LukeyOS/start/source/loader /home/os/workspace/LukeyOS/start/build /home/os/workspace/LukeyOS/start/build/source/loader /home/os/workspace/LukeyOS/start/build/source/loader/CMakeFiles/loader.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alvin/workspace/LukeyOS/LukeyOS/start /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader /home/alvin/workspace/LukeyOS/LukeyOS/start/build /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/CMakeFiles/loader.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : source/loader/CMakeFiles/loader.dir/depend
 

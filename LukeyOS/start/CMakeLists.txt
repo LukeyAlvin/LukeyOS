@@ -40,11 +40,13 @@ enable_language(ASM)
 include_directories(
     ${PROJECT_SOURCE_DIR}/source
     ${PROJECT_SOURCE_DIR}/source/kernel/include
-#     ${PROJECT_SOURCE_DIR}/../newlib/i686-elf/include
+    ${PROJECT_SOURCE_DIR}/../newlib/i686-elf/include
 )
 
 # 底层的若干子项目：含内核及应用程序
 add_subdirectory(./source/boot)
 add_subdirectory(./source/loader)
 add_subdirectory(./source/kernel)
+add_subdirectory(./source/applib)
+add_subdirectory(./source/shell)
 

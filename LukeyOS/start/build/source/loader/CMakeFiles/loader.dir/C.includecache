@@ -6,33 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../source/common/boot_info.h
-types.h
-../source/common/types.h
-
-../source/common/cpu_instr.h
-types.h
-../source/common/types.h
-
-../source/common/elf.h
-
-../source/common/types.h
-
-/home/os/workspace/LukeyOS/start/source/loader/loader.h
-common/types.h
-/home/os/workspace/LukeyOS/start/source/loader/common/types.h
-common/boot_info.h
-/home/os/workspace/LukeyOS/start/source/loader/common/boot_info.h
-common/cpu_instr.h
-/home/os/workspace/LukeyOS/start/source/loader/common/cpu_instr.h
-common/elf.h
-/home/os/workspace/LukeyOS/start/source/loader/common/elf.h
-
-/home/os/workspace/LukeyOS/start/source/loader/loader_16.c
-loader.h
-/home/os/workspace/LukeyOS/start/source/loader/loader.h
-
-/home/os/workspace/LukeyOS/start/source/loader/loader_32.c
-loader.h
-/home/os/workspace/LukeyOS/start/source/loader/loader.h
-

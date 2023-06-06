@@ -2,7 +2,7 @@
  * @Description: 内存管理
  * @Author: Alvin
  * @Date: 2023-04-22 20:04:11
- * @LastEditTime: 2023-05-06 10:53:23
+ * @LastEditTime: 2023-06-05 16:28:24
  */
 
 #ifndef MEMORY_H
@@ -22,7 +22,15 @@
 // 用户虚拟内存空间的起始虚拟地址
 #define MEMORY_TASK_BASE 0x80000000
 // 结束地址
-#define MEM_EXT_END  (128*1024*1024 - 1)
+#define MEM_EXT_END (128 * 1024 * 1024 - 1)
+
+// exec实现中用户栈的起始地址
+#define MEM_TASK_STACK_TOP (0xE0000000)
+// exec实现中用户栈的的大小 500页大小
+#define MEM_TASK_STACK_SIZE (MEM_PAGE_SIZE * 500)
+// exec实现中参数和环境变量占用的大小
+#define MEM_TASK_ARG_SIZE (MEM_PAGE_SIZE * 4)
+
 /**
  * @brief 地址分配结构
  */
@@ -58,7 +66,7 @@ uint32_t memory_create_uvm();
  * @param {uint32_t} size       需要分配的虚拟地址空间大小
  * @param {int} perm            映射的权限
  */
-uint32_t memory_alloc_for_page_dir (uint32_t page_dir, uint32_t vaddr, uint32_t size, int perm);
+uint32_t memory_alloc_for_page_dir(uint32_t page_dir, uint32_t vaddr, uint32_t size, int perm);
 /**
  * 为指定的虚拟地址空间分配多页内存
  * @return {*}
@@ -66,5 +74,17 @@ uint32_t memory_alloc_for_page_dir (uint32_t page_dir, uint32_t vaddr, uint32_t 
  * @param {uint32_t} size   虚拟空间的大小
  * @param {int} perm        权限
  */
-int memory_alloc_page_for (uint32_t addr, uint32_t size, int perm);
+int memory_alloc_page_for(uint32_t addr, uint32_t size, int perm);
+
+uint32_t memory_alloc_page(void);
+void memory_free_page(uint32_t addr);
+
+void memory_destroy_uvm(uint32_t page_dir);
+uint32_t memory_copy_uvm(uint32_t page_dir);
+uint32_t memory_get_paddr(uint32_t page_dir, uint32_t vaddr);
+int memory_copy_uvm_data(uint32_t to, uint32_t page_dir, uint32_t from, uint32_t size);
+
+char * sys_sbrk(int incr);
+
+
 #endif // MEMORY_H

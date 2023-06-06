@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/os/workspace/LukeyOS/start
+CMAKE_SOURCE_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/os/workspace/LukeyOS/start/build
+CMAKE_BINARY_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start/build
 
 # Include any dependencies generated for this target.
 include source/boot/CMakeFiles/boot.dir/depend.make
@@ -59,21 +59,21 @@ include source/boot/CMakeFiles/boot.dir/flags.make
 
 source/boot/CMakeFiles/boot.dir/start.S.o: source/boot/CMakeFiles/boot.dir/flags.make
 source/boot/CMakeFiles/boot.dir/start.S.o: ../source/boot/start.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building ASM object source/boot/CMakeFiles/boot.dir/start.S.o"
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && /usr/bin/gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/boot.dir/start.S.o -c /home/os/workspace/LukeyOS/start/source/boot/start.S
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building ASM object source/boot/CMakeFiles/boot.dir/start.S.o"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && /usr/bin/gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/boot.dir/start.S.o -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/start.S
 
 source/boot/CMakeFiles/boot.dir/boot.c.o: source/boot/CMakeFiles/boot.dir/flags.make
 source/boot/CMakeFiles/boot.dir/boot.c.o: ../source/boot/boot.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/boot/CMakeFiles/boot.dir/boot.c.o"
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/boot.dir/boot.c.o   -c /home/os/workspace/LukeyOS/start/source/boot/boot.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object source/boot/CMakeFiles/boot.dir/boot.c.o"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/boot.dir/boot.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/boot.c
 
 source/boot/CMakeFiles/boot.dir/boot.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/boot.dir/boot.c.i"
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/os/workspace/LukeyOS/start/source/boot/boot.c > CMakeFiles/boot.dir/boot.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/boot.c > CMakeFiles/boot.dir/boot.c.i
 
 source/boot/CMakeFiles/boot.dir/boot.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/boot.dir/boot.c.s"
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/os/workspace/LukeyOS/start/source/boot/boot.c -o CMakeFiles/boot.dir/boot.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/boot.c -o CMakeFiles/boot.dir/boot.c.s
 
 # Object files for target boot
 boot_OBJECTS = \
@@ -87,11 +87,11 @@ source/boot/boot: source/boot/CMakeFiles/boot.dir/start.S.o
 source/boot/boot: source/boot/CMakeFiles/boot.dir/boot.c.o
 source/boot/boot: source/boot/CMakeFiles/boot.dir/build.make
 source/boot/boot: source/boot/CMakeFiles/boot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/os/workspace/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable boot"
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/boot.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && objcopy -O binary boot.elf /home/os/workspace/LukeyOS/start/../image/boot.bin
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && objdump -x -d -S -m i8086 /home/os/workspace/LukeyOS/start/build/source/boot/boot.elf > boot_dis.txt
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && readelf -a /home/os/workspace/LukeyOS/start/build/source/boot/boot.elf > boot_elf.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable boot"
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/boot.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && objcopy -O binary boot.elf /home/alvin/workspace/LukeyOS/LukeyOS/start/../image/boot.bin
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && objdump -x -d -S -m i8086 /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/boot.elf > boot_dis.txt
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && readelf -a /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/boot.elf > boot_elf.txt
 
 # Rule to build all files generated by this target.
 source/boot/CMakeFiles/boot.dir/build: source/boot/boot
@@ -99,10 +99,10 @@ source/boot/CMakeFiles/boot.dir/build: source/boot/boot
 .PHONY : source/boot/CMakeFiles/boot.dir/build
 
 source/boot/CMakeFiles/boot.dir/clean:
-	cd /home/os/workspace/LukeyOS/start/build/source/boot && $(CMAKE_COMMAND) -P CMakeFiles/boot.dir/cmake_clean.cmake
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot && $(CMAKE_COMMAND) -P CMakeFiles/boot.dir/cmake_clean.cmake
 .PHONY : source/boot/CMakeFiles/boot.dir/clean
 
 source/boot/CMakeFiles/boot.dir/depend:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/os/workspace/LukeyOS/start /home/os/workspace/LukeyOS/start/source/boot /home/os/workspace/LukeyOS/start/build /home/os/workspace/LukeyOS/start/build/source/boot /home/os/workspace/LukeyOS/start/build/source/boot/CMakeFiles/boot.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alvin/workspace/LukeyOS/LukeyOS/start /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot /home/alvin/workspace/LukeyOS/LukeyOS/start/build /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/CMakeFiles/boot.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : source/boot/CMakeFiles/boot.dir/depend
 

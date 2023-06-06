@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/os/workspace/LukeyOS/start
+CMAKE_SOURCE_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/os/workspace/LukeyOS/start/build
+CMAKE_BINARY_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/os/workspace/LukeyOS/start/build/CMakeFiles /home/os/workspace/LukeyOS/start/build/source/kernel/CMakeFiles/progress.marks
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/os/workspace/LukeyOS/start/build/CMakeFiles 0
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel/CMakeFiles/progress.marks
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/clean
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 source/kernel/CMakeFiles/kernel.dir/rule:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/CMakeFiles/kernel.dir/rule
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/kernel/CMakeFiles/kernel.dir/rule
 .PHONY : source/kernel/CMakeFiles/kernel.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ kernel: source/kernel/CMakeFiles/kernel.dir/rule
 
 # fast build rule for target.
 kernel/fast:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/build
 .PHONY : kernel/fast
 
 core/memory.o: core/memory.c.o
@@ -131,7 +131,7 @@ core/memory.o: core/memory.c.o
 
 # target to build an object file
 core/memory.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.o
 .PHONY : core/memory.c.o
 
 core/memory.i: core/memory.c.i
@@ -140,7 +140,7 @@ core/memory.i: core/memory.c.i
 
 # target to preprocess a source file
 core/memory.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.i
 .PHONY : core/memory.c.i
 
 core/memory.s: core/memory.c.s
@@ -149,8 +149,35 @@ core/memory.s: core/memory.c.s
 
 # target to generate assembly for a file
 core/memory.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/memory.c.s
 .PHONY : core/memory.c.s
+
+core/syscall.o: core/syscall.c.o
+
+.PHONY : core/syscall.o
+
+# target to build an object file
+core/syscall.c.o:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/syscall.c.o
+.PHONY : core/syscall.c.o
+
+core/syscall.i: core/syscall.c.i
+
+.PHONY : core/syscall.i
+
+# target to preprocess a source file
+core/syscall.c.i:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/syscall.c.i
+.PHONY : core/syscall.c.i
+
+core/syscall.s: core/syscall.c.s
+
+.PHONY : core/syscall.s
+
+# target to generate assembly for a file
+core/syscall.c.s:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/syscall.c.s
+.PHONY : core/syscall.c.s
 
 core/task.o: core/task.c.o
 
@@ -158,7 +185,7 @@ core/task.o: core/task.c.o
 
 # target to build an object file
 core/task.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.o
 .PHONY : core/task.c.o
 
 core/task.i: core/task.c.i
@@ -167,7 +194,7 @@ core/task.i: core/task.c.i
 
 # target to preprocess a source file
 core/task.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.i
 .PHONY : core/task.c.i
 
 core/task.s: core/task.c.s
@@ -176,7 +203,7 @@ core/task.s: core/task.c.s
 
 # target to generate assembly for a file
 core/task.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/core/task.c.s
 .PHONY : core/task.c.s
 
 cpu/cpu.o: cpu/cpu.c.o
@@ -185,7 +212,7 @@ cpu/cpu.o: cpu/cpu.c.o
 
 # target to build an object file
 cpu/cpu.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.o
 .PHONY : cpu/cpu.c.o
 
 cpu/cpu.i: cpu/cpu.c.i
@@ -194,7 +221,7 @@ cpu/cpu.i: cpu/cpu.c.i
 
 # target to preprocess a source file
 cpu/cpu.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.i
 .PHONY : cpu/cpu.c.i
 
 cpu/cpu.s: cpu/cpu.c.s
@@ -203,7 +230,7 @@ cpu/cpu.s: cpu/cpu.c.s
 
 # target to generate assembly for a file
 cpu/cpu.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/cpu.c.s
 .PHONY : cpu/cpu.c.s
 
 cpu/irq.o: cpu/irq.c.o
@@ -212,7 +239,7 @@ cpu/irq.o: cpu/irq.c.o
 
 # target to build an object file
 cpu/irq.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.o
 .PHONY : cpu/irq.c.o
 
 cpu/irq.i: cpu/irq.c.i
@@ -221,7 +248,7 @@ cpu/irq.i: cpu/irq.c.i
 
 # target to preprocess a source file
 cpu/irq.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.i
 .PHONY : cpu/irq.c.i
 
 cpu/irq.s: cpu/irq.c.s
@@ -230,7 +257,7 @@ cpu/irq.s: cpu/irq.c.s
 
 # target to generate assembly for a file
 cpu/irq.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/cpu/irq.c.s
 .PHONY : cpu/irq.c.s
 
 dev/time.o: dev/time.c.o
@@ -239,7 +266,7 @@ dev/time.o: dev/time.c.o
 
 # target to build an object file
 dev/time.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.o
 .PHONY : dev/time.c.o
 
 dev/time.i: dev/time.c.i
@@ -248,7 +275,7 @@ dev/time.i: dev/time.c.i
 
 # target to preprocess a source file
 dev/time.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.i
 .PHONY : dev/time.c.i
 
 dev/time.s: dev/time.c.s
@@ -257,8 +284,35 @@ dev/time.s: dev/time.c.s
 
 # target to generate assembly for a file
 dev/time.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/dev/time.c.s
 .PHONY : dev/time.c.s
+
+file/file.o: file/file.c.o
+
+.PHONY : file/file.o
+
+# target to build an object file
+file/file.c.o:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/file/file.c.o
+.PHONY : file/file.c.o
+
+file/file.i: file/file.c.i
+
+.PHONY : file/file.i
+
+# target to preprocess a source file
+file/file.c.i:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/file/file.c.i
+.PHONY : file/file.c.i
+
+file/file.s: file/file.c.s
+
+.PHONY : file/file.s
+
+# target to generate assembly for a file
+file/file.c.s:
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/file/file.c.s
+.PHONY : file/file.c.s
 
 init/first_task.o: init/first_task.c.o
 
@@ -266,7 +320,7 @@ init/first_task.o: init/first_task.c.o
 
 # target to build an object file
 init/first_task.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.o
 .PHONY : init/first_task.c.o
 
 init/first_task.i: init/first_task.c.i
@@ -275,7 +329,7 @@ init/first_task.i: init/first_task.c.i
 
 # target to preprocess a source file
 init/first_task.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.i
 .PHONY : init/first_task.c.i
 
 init/first_task.s: init/first_task.c.s
@@ -284,7 +338,7 @@ init/first_task.s: init/first_task.c.s
 
 # target to generate assembly for a file
 init/first_task.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task.c.s
 .PHONY : init/first_task.c.s
 
 init/first_task_entry.o: init/first_task_entry.S.o
@@ -293,7 +347,7 @@ init/first_task_entry.o: init/first_task_entry.S.o
 
 # target to build an object file
 init/first_task_entry.S.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task_entry.S.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/first_task_entry.S.o
 .PHONY : init/first_task_entry.S.o
 
 init/init.o: init/init.c.o
@@ -302,7 +356,7 @@ init/init.o: init/init.c.o
 
 # target to build an object file
 init/init.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.o
 .PHONY : init/init.c.o
 
 init/init.i: init/init.c.i
@@ -311,7 +365,7 @@ init/init.i: init/init.c.i
 
 # target to preprocess a source file
 init/init.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.i
 .PHONY : init/init.c.i
 
 init/init.s: init/init.c.s
@@ -320,7 +374,7 @@ init/init.s: init/init.c.s
 
 # target to generate assembly for a file
 init/init.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/init.c.s
 .PHONY : init/init.c.s
 
 init/start.o: init/start.S.o
@@ -329,7 +383,7 @@ init/start.o: init/start.S.o
 
 # target to build an object file
 init/start.S.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/start.S.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/init/start.S.o
 .PHONY : init/start.S.o
 
 ipc/mutex.o: ipc/mutex.c.o
@@ -338,7 +392,7 @@ ipc/mutex.o: ipc/mutex.c.o
 
 # target to build an object file
 ipc/mutex.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.o
 .PHONY : ipc/mutex.c.o
 
 ipc/mutex.i: ipc/mutex.c.i
@@ -347,7 +401,7 @@ ipc/mutex.i: ipc/mutex.c.i
 
 # target to preprocess a source file
 ipc/mutex.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.i
 .PHONY : ipc/mutex.c.i
 
 ipc/mutex.s: ipc/mutex.c.s
@@ -356,7 +410,7 @@ ipc/mutex.s: ipc/mutex.c.s
 
 # target to generate assembly for a file
 ipc/mutex.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/mutex.c.s
 .PHONY : ipc/mutex.c.s
 
 ipc/sem.o: ipc/sem.c.o
@@ -365,7 +419,7 @@ ipc/sem.o: ipc/sem.c.o
 
 # target to build an object file
 ipc/sem.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.o
 .PHONY : ipc/sem.c.o
 
 ipc/sem.i: ipc/sem.c.i
@@ -374,7 +428,7 @@ ipc/sem.i: ipc/sem.c.i
 
 # target to preprocess a source file
 ipc/sem.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.i
 .PHONY : ipc/sem.c.i
 
 ipc/sem.s: ipc/sem.c.s
@@ -383,7 +437,7 @@ ipc/sem.s: ipc/sem.c.s
 
 # target to generate assembly for a file
 ipc/sem.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/ipc/sem.c.s
 .PHONY : ipc/sem.c.s
 
 tools/bitmap.o: tools/bitmap.c.o
@@ -392,7 +446,7 @@ tools/bitmap.o: tools/bitmap.c.o
 
 # target to build an object file
 tools/bitmap.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.o
 .PHONY : tools/bitmap.c.o
 
 tools/bitmap.i: tools/bitmap.c.i
@@ -401,7 +455,7 @@ tools/bitmap.i: tools/bitmap.c.i
 
 # target to preprocess a source file
 tools/bitmap.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.i
 .PHONY : tools/bitmap.c.i
 
 tools/bitmap.s: tools/bitmap.c.s
@@ -410,7 +464,7 @@ tools/bitmap.s: tools/bitmap.c.s
 
 # target to generate assembly for a file
 tools/bitmap.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/bitmap.c.s
 .PHONY : tools/bitmap.c.s
 
 tools/klib.o: tools/klib.c.o
@@ -419,7 +473,7 @@ tools/klib.o: tools/klib.c.o
 
 # target to build an object file
 tools/klib.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.o
 .PHONY : tools/klib.c.o
 
 tools/klib.i: tools/klib.c.i
@@ -428,7 +482,7 @@ tools/klib.i: tools/klib.c.i
 
 # target to preprocess a source file
 tools/klib.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.i
 .PHONY : tools/klib.c.i
 
 tools/klib.s: tools/klib.c.s
@@ -437,7 +491,7 @@ tools/klib.s: tools/klib.c.s
 
 # target to generate assembly for a file
 tools/klib.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/klib.c.s
 .PHONY : tools/klib.c.s
 
 tools/list.o: tools/list.c.o
@@ -446,7 +500,7 @@ tools/list.o: tools/list.c.o
 
 # target to build an object file
 tools/list.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.o
 .PHONY : tools/list.c.o
 
 tools/list.i: tools/list.c.i
@@ -455,7 +509,7 @@ tools/list.i: tools/list.c.i
 
 # target to preprocess a source file
 tools/list.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.i
 .PHONY : tools/list.c.i
 
 tools/list.s: tools/list.c.s
@@ -464,7 +518,7 @@ tools/list.s: tools/list.c.s
 
 # target to generate assembly for a file
 tools/list.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/list.c.s
 .PHONY : tools/list.c.s
 
 tools/log.o: tools/log.c.o
@@ -473,7 +527,7 @@ tools/log.o: tools/log.c.o
 
 # target to build an object file
 tools/log.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.o
 .PHONY : tools/log.c.o
 
 tools/log.i: tools/log.c.i
@@ -482,7 +536,7 @@ tools/log.i: tools/log.c.i
 
 # target to preprocess a source file
 tools/log.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.i
 .PHONY : tools/log.c.i
 
 tools/log.s: tools/log.c.s
@@ -491,7 +545,7 @@ tools/log.s: tools/log.c.s
 
 # target to generate assembly for a file
 tools/log.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/kernel/CMakeFiles/kernel.dir/build.make source/kernel/CMakeFiles/kernel.dir/tools/log.c.s
 .PHONY : tools/log.c.s
 
 # Help Target
@@ -506,6 +560,9 @@ help:
 	@echo "... core/memory.o"
 	@echo "... core/memory.i"
 	@echo "... core/memory.s"
+	@echo "... core/syscall.o"
+	@echo "... core/syscall.i"
+	@echo "... core/syscall.s"
 	@echo "... core/task.o"
 	@echo "... core/task.i"
 	@echo "... core/task.s"
@@ -518,6 +575,9 @@ help:
 	@echo "... dev/time.o"
 	@echo "... dev/time.i"
 	@echo "... dev/time.s"
+	@echo "... file/file.o"
+	@echo "... file/file.i"
+	@echo "... file/file.s"
 	@echo "... init/first_task.o"
 	@echo "... init/first_task.i"
 	@echo "... init/first_task.s"
@@ -555,6 +615,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

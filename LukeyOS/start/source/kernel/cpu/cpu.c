@@ -2,13 +2,14 @@
  * @Description: CPU设置
  * @Author: Alvin
  * @Date: 2023-04-17 10:16:07
- * @LastEditTime: 2023-05-06 08:06:30
+ * @LastEditTime: 2023-05-22 15:12:10
  */
 #include "cpu/cpu.h"
 #include "os_cfg.h"
 #include "common/cpu_instr.h"
 #include "cpu/irq.h"
 #include "ipc/mutex.h"
+#include "core/syscall.h"
 
 static segment_desc_t gdt_table[GDT_TABLE_SIZE];
 // 定义互斥锁结构
@@ -53,6 +54,12 @@ void init_gdt(void)
     segment_desc_set(KERNEL_SELECTOR_CS, 0x00000000, 0xFFFFFFFF,
                      SEG_P_PRESENT | SEG_DPL0 | SEG_S_NORMAL | SEG_TYPE_CODE | SEG_TYPE_RW | SEG_D);
 
+    // 调用门
+    gate_desc_set((gate_desc_t *)(gdt_table + (SELECTOR_SYSCALL >> 3)),
+            KERNEL_SELECTOR_CS,
+            (uint32_t)exception_handler_syscall,    // 函数入口地址
+            GATE_P_PRESENT | GATE_DPL3 | GATE_TYPE_SYSCALL | SYSCALL_PARAM_COUNT);
+    
     // 加载gdt
     lgdt((uint32_t)gdt_table, sizeof(gdt_table));
 }

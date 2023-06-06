@@ -2,7 +2,7 @@
  * @Description: 与x86的体系结构相关的接口及参数
  * @Author: Alvin
  * @Date: 2023-04-17 10:16:07
- * @LastEditTime: 2023-05-17 15:50:05
+ * @LastEditTime: 2023-05-22 10:44:05
  */
 #ifndef CPU_H
 #define CPU_H
@@ -30,6 +30,12 @@
 
 #define SEG_RPL0                (0 << 0)
 #define SEG_RPL3                (3 << 0)
+
+#define GATE_TYPE_IDT		(0xE << 8)		// 中断32位门描述符
+#define GATE_TYPE_SYSCALL	(0xC << 8)		// 调用门
+#define GATE_P_PRESENT		(1 << 15)		// 是否存在
+#define GATE_DPL0			(0 << 13)		// 特权级0，最高特权级
+#define GATE_DPL3			(3 << 13)		// 特权级3，最低权限
 
 // TSS 中的EFlags寄存器
 #define EFLAGS_DEFAULT (1 << 1)

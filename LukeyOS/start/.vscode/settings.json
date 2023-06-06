@@ -24,6 +24,9 @@
         "mutex.h": "c",
         "stdarg.h": "c",
         "memory.h": "c",
-        "mmu.h": "c"
+        "mmu.h": "c",
+        "file.h": "c",
+        "syscall.h": "c",
+        "stdio.h": "c"
     },
 }

@@ -2,7 +2,7 @@
  * @Description: 工具函数
  * @Author: Alvin
  * @Date: 2023-04-18 15:14:56
- * @LastEditTime: 2023-04-22 21:55:37
+ * @LastEditTime: 2023-05-26 11:26:32
  */
 
 #ifndef KLIB_H_
@@ -40,6 +40,10 @@ void kernel_vsprintf(char * buffer, const char * fmt, va_list args);
 void kernel_itoa(char * buffer, int num, int base);
 
 void kernel_sprintf(char * buffer, const char * fmt, ...);
+
+int strings_count (char ** start);
+char * get_file_name (char * name);
+
 
 /**
  * 例如，如果 size 是 1000，bound 是 256，那么对 size 进行向上对齐后，

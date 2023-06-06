@@ -2,16 +2,25 @@
  * @Description: 内存管理
  * @Author: Alvin
  * @Date: 2023-04-22 20:03:30
- * @LastEditTime: 2023-05-08 19:00:01
+ * @LastEditTime: 2023-06-05 16:28:53
  */
 
 #include "tools/klib.h"
 #include "tools/log.h"
 #include "core/memory.h"
 #include "cpu/mmu.h"
+#include "dev/console.h"
 
 static addr_alloc_t paddr_alloc;                                               // 物理地址分配结构
 static pde_t kernel_page_dir[PDE_CNT] __attribute__((aligned(MEM_PAGE_SIZE))); // 内核页目录表
+
+/**
+ * @brief 获取当前页表地址
+ */
+static pde_t *current_page_dir(void)
+{
+    return (pde_t *)task_current()->tss.cr3;
+}
 
 /**
  * @description: 初始化地址分配结构
@@ -202,8 +211,10 @@ void create_kernel_table(void)
         {s_text, e_text, s_text, 0},                           // 内核代码区
         {s_data, (void *)(MEM_EBDA_START - 1), s_data, PTE_W}, // 内核数据区
 
+        {(void *)CONSOLE_DISP_ADDR, (void *)(CONSOLE_DISP_END - 1), (void *)CONSOLE_DISP_ADDR, PTE_W},
+
         // 扩展存储空间一一映射，方便直接操作
-        {(void *)MEM_EXT_START, (void *)MEM_EXT_END,     (void *)MEM_EXT_START, PTE_W},
+        {(void *)MEM_EXT_START, (void *)MEM_EXT_END, (void *)MEM_EXT_START, PTE_W},
     };
 
     // 计算出每个内存区域需要映射的页数和每个页的虚拟地址和物理地址之间的映射关系。
@@ -252,26 +263,30 @@ uint32_t memory_create_uvm(void)
  * @param {uint32_t} size       需要分配的虚拟地址空间大小
  * @param {int} perm            映射的权限
  */
-uint32_t memory_alloc_for_page_dir (uint32_t page_dir, uint32_t vaddr, uint32_t size, int perm) {
+uint32_t memory_alloc_for_page_dir(uint32_t page_dir, uint32_t vaddr, uint32_t size, int perm)
+{
     uint32_t curr_vaddr = vaddr;
     int page_count = up2(size, MEM_PAGE_SIZE) / MEM_PAGE_SIZE;
     vaddr = down2(vaddr, MEM_PAGE_SIZE);
 
     // 逐页分配内存，然后建立映射关系
-    for (int i = 0; i < page_count; i++) {
+    for (int i = 0; i < page_count; i++)
+    {
         // 分配需要的内存
         uint32_t paddr = addr_alloc_page(&paddr_alloc, 1);
-        if (paddr == 0) {
+        if (paddr == 0)
+        {
             log_printf("mem alloc failed. no memory");
             return 0;
         }
 
         // 建立分配的内存与指定地址的关联
         int err = memory_create_map((pde_t *)page_dir, curr_vaddr, paddr, 1, perm);
-        if (err < 0) {
+        if (err < 0)
+        {
             log_printf("create memory map failed. err = %d", err);
             addr_free_page(&paddr_alloc, vaddr, i + 1);
-            return -1;  
+            return -1;
         }
 
         curr_vaddr += MEM_PAGE_SIZE;
@@ -282,8 +297,191 @@ uint32_t memory_alloc_for_page_dir (uint32_t page_dir, uint32_t vaddr, uint32_t 
 /**
  * @brief 为指定的虚拟地址空间分配多页内存
  */
-int memory_alloc_page_for (uint32_t addr, uint32_t size, int perm) {
+int memory_alloc_page_for(uint32_t addr, uint32_t size, int perm)
+{
     return memory_alloc_for_page_dir(task_current()->tss.cr3, addr, size, perm);
+}
+
+/**
+ * @brief 分配一页内存
+ * 主要用于内核空间内存的分配，不用于进程内存空间
+ */
+uint32_t memory_alloc_page(void)
+{
+    // 内核空间虚拟地址与物理地址相同
+    return addr_alloc_page(&paddr_alloc, 1);
+}
+
+/**
+ * @brief 释放一页内存
+ */
+void memory_free_page(uint32_t addr)
+{
+    if (addr < MEMORY_TASK_BASE)
+    {
+        // 内核空间，直接释放
+        addr_free_page(&paddr_alloc, addr, 1);
+    }
+    else
+    {
+        // 进程空间，还要释放页表
+        pte_t *pte = find_pte(current_page_dir(), addr, 0);
+        ASSERT((pte == (pte_t *)0) && pte->present);
+
+        // 释放内存页
+        addr_free_page(&paddr_alloc, pte_paddr(pte), 1);
+
+        // 释放页表
+        pte->v = 0;
+    }
+}
+
+/**
+ * @brief 销毁用户空间内存
+ */
+void memory_destroy_uvm(uint32_t page_dir)
+{
+    uint32_t user_pde_start = pde_index(MEMORY_TASK_BASE);
+    pde_t *pde = (pde_t *)page_dir + user_pde_start;
+
+    ASSERT(page_dir != 0);
+
+    // 释放页表中对应的各项，不包含映射的内核页面
+    for (int i = user_pde_start; i < PDE_CNT; i++, pde++)
+    {
+        if (!pde->present)
+        {
+            continue;
+        }
+
+        // 释放页表对应的物理页 + 页表
+        pte_t *pte = (pte_t *)pde_paddr(pde);
+        for (int j = 0; j < PTE_CNT; j++, pte++)
+        {
+            if (!pte->present)
+            {
+                continue;
+            }
+
+            addr_free_page(&paddr_alloc, pte_paddr(pte), 1);
+        }
+
+        addr_free_page(&paddr_alloc, (uint32_t)pde_paddr(pde), 1);
+    }
+
+    // 页目录表
+    addr_free_page(&paddr_alloc, page_dir, 1);
+}
+
+/**
+ * @brief 复制页表及其所有的内存空间
+ */
+uint32_t memory_copy_uvm(uint32_t page_dir)
+{
+    // 复制基础页表
+    uint32_t to_page_dir = memory_create_uvm();
+    if (to_page_dir == 0)
+    {
+        goto copy_uvm_failed;
+    }
+
+    // 再复制用户空间的各项
+    uint32_t user_pde_start = pde_index(MEMORY_TASK_BASE);
+    pde_t *pde = (pde_t *)page_dir + user_pde_start;
+
+    // 遍历用户空间页目录项
+    for (int i = user_pde_start; i < PDE_CNT; i++, pde++)
+    {
+        if (!pde->present)
+        {
+            continue;
+        }
+
+        // 遍历页表
+        pte_t *pte = (pte_t *)pde_paddr(pde);
+        for (int j = 0; j < PTE_CNT; j++, pte++)
+        {
+            if (!pte->present)
+            {
+                continue;
+            }
+
+            // 分配物理内存
+            uint32_t page = addr_alloc_page(&paddr_alloc, 1);
+            if (page == 0)
+            {
+                goto copy_uvm_failed;
+            }
+
+            // 建立映射关系
+            uint32_t vaddr = (i << 22) | (j << 12);
+            int err = memory_create_map((pde_t *)to_page_dir, vaddr, page, 1, get_pte_perm(pte));
+            if (err < 0)
+            {
+                goto copy_uvm_failed;
+            }
+
+            // 复制内容。
+            kernel_memcpy((void *)page, (void *)vaddr, MEM_PAGE_SIZE);
+        }
+    }
+    return to_page_dir;
+
+copy_uvm_failed:
+    if (to_page_dir)
+    {
+        memory_destroy_uvm(to_page_dir);
+    }
+    return -1;
+}
+/**
+ * @brief 获取指定虚拟地址的物理地址
+ * 如果转换失败，返回0。
+ */
+uint32_t memory_get_paddr(uint32_t page_dir, uint32_t vaddr)
+{
+    pte_t *pte = find_pte((pde_t *)page_dir, vaddr, 0);
+    if (pte == (pte_t *)0)
+    {
+        return 0;
+    }
+
+    return pte_paddr(pte) + (vaddr & (MEM_PAGE_SIZE - 1));
+}
+
+/**
+ * @brief 在不同的进程空间中拷贝字符串
+ * page_dir为目标页表，当前仍为老页表
+ */
+int memory_copy_uvm_data(uint32_t to, uint32_t page_dir, uint32_t from, uint32_t size)
+{
+    char *buf, *pa0;
+
+    while (size > 0)
+    {
+        // 获取目标的物理地址, 也即其另一个虚拟地址
+        uint32_t to_paddr = memory_get_paddr(page_dir, to);
+        if (to_paddr == 0)
+        {
+            return -1;
+        }
+
+        // 计算当前可拷贝的大小
+        uint32_t offset_in_page = to_paddr & (MEM_PAGE_SIZE - 1);
+        uint32_t curr_size = MEM_PAGE_SIZE - offset_in_page;
+        if (curr_size > size)
+        {
+            curr_size = size; // 如果比较大，超过页边界，则只拷贝此页内的
+        }
+
+        kernel_memcpy((void *)to_paddr, (void *)from, curr_size);
+
+        size -= curr_size;
+        to += curr_size;
+        from += curr_size;
+    }
+
+    return 0;
 }
 
 /**
@@ -325,4 +523,63 @@ void memory_init(boot_info_t *boot_info)
 
     // 设置页目录表的物理地址
     mmu_set_page_dir((uint32_t)kernel_page_dir);
+}
+
+/**
+ * @: 动态调整堆的内存
+ * @param {int} incr 增加堆的大小
+ * @return {*} 返回堆之前的指针
+ */
+char *sys_sbrk(int incr)
+{
+    task_t *task = task_current();
+    char *pre_heap_end = (char *)task->heap_end;
+    int pre_incr = incr;
+
+    ASSERT(incr >= 0);
+
+    // 如果地址为0，则返回有效的heap区域的顶端
+    if (incr == 0)
+    {
+        log_printf("sbrk(0): end = 0x%x", pre_heap_end);
+        return pre_heap_end;
+    }
+
+    uint32_t start = task->heap_end;
+    uint32_t end = start + incr;
+
+    // 起始偏移非0
+    int start_offset = start % MEM_PAGE_SIZE;
+    if (start_offset)
+    {
+        // 不超过1页，只调整
+        if (start_offset + incr <= MEM_PAGE_SIZE)
+        {
+            task->heap_end = end;
+            return pre_heap_end;
+        }
+        else
+        {
+            // 超过1页，先只调本页的
+            uint32_t curr_size = MEM_PAGE_SIZE - start_offset;
+            start += curr_size;
+            incr -= curr_size;
+        }
+    }
+
+    // 处理其余的，起始对齐的页边界的
+    if (incr)
+    {
+        uint32_t curr_size = end - start;
+        int err = memory_alloc_page_for(start, curr_size, PTE_P | PTE_U | PTE_W);
+        if (err < 0)
+        {
+            log_printf("sbrk: alloc mem failed.");
+            return (char *)-1;
+        }
+    }
+
+    // log_printf("sbrk(%d): end = 0x%x", pre_incr, end);
+    task->heap_end = end;
+    return (char *)pre_heap_end;
 }

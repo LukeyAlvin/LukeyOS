@@ -2,7 +2,7 @@
  * @Description: 内核初始化以及测试代码
  * @Author: Alvin
  * @Date: 2023-04-17 10:16:07
- * @LastEditTime: 2023-05-08 18:55:34
+ * @LastEditTime: 2023-06-03 11:11:55
  */
 #include "init.h"
 #include "common/boot_info.h"
@@ -16,6 +16,9 @@
 #include "ipc/sem.h"
 #include "core/memory.h"
 #include "tools/klib.h"
+#include "dev/console.h"
+#include "dev/kbd.h"
+#include "file/file.h"
 
 static boot_info_t *init_boot_info; // 启动信息
 /**
@@ -26,10 +29,12 @@ void kernel_init(boot_info_t *boot_info)
     init_boot_info = boot_info;
     // 初始化CPU，再重新加载
     cpu_init();
+    irq_init();
     // 初始化日志
     log_init();
+    
     memory_init(boot_info);
-    irq_init();
+    fs_init();
     time_init();
     task_manager_init();
 }
@@ -66,7 +71,6 @@ void init_main(void)
 {
     log_printf("Kernel is Running......");
     log_printf("Version: %s", OS_VERSION);
-    log_printf("%d %d %x %c", -123, 123456, 0x12345, 'a');
 
     // 初始化mian任务，即为内核任务
     task_first_init();

@@ -7,11 +7,11 @@ ASM_FLAGS = -m32 -g
 
 ASM_DEFINES = 
 
-ASM_INCLUDES = -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include 
+ASM_INCLUDES = -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include -I/home/alvin/workspace/LukeyOS/LukeyOS/start/../newlib/i686-elf/include 
 
 C_FLAGS = -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables  
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include 
+C_INCLUDES = -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include -I/home/alvin/workspace/LukeyOS/LukeyOS/start/../newlib/i686-elf/include 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/os/workspace/LukeyOS/start
+# Install script for directory: /home/alvin/workspace/LukeyOS/LukeyOS/start
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/os/workspace/LukeyOS/start/build/source/boot/cmake_install.cmake")
-  include("/home/os/workspace/LukeyOS/start/build/source/loader/cmake_install.cmake")
-  include("/home/os/workspace/LukeyOS/start/build/source/kernel/cmake_install.cmake")
+  include("/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/cmake_install.cmake")
+  include("/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/cmake_install.cmake")
+  include("/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel/cmake_install.cmake")
+  include("/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/applib/cmake_install.cmake")
+  include("/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/shell/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/os/workspace/LukeyOS/start/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

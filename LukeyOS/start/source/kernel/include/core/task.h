@@ -2,7 +2,7 @@
  * @Description: 任务实现
  * @Author: Alvin
  * @Date: 2023-04-19 04:55:57
- * @LastEditTime: 2023-05-16 20:36:51
+ * @LastEditTime: 2023-06-06 14:51:00
  * @LastEditors: Please set LastEditors
  */
 #ifndef TASK_H
@@ -11,11 +11,13 @@
 #include "common/types.h"
 #include "cpu/cpu.h"
 #include "tools/list.h"
+#include "file/file_sys.h"
 
 #define TASK_NAME_SIZE 32
 #define TASK_TIME_SLICE_DEFAULT 100 // 时间片轮转时间
 #define IDLE_STACK_SIZE 1024		// 空闲进程的空闲任务堆栈
-#define TASK_FLAG_SYSTEM (1 << 0)	// 系统任务
+#define TASK_FLAG_SYSTEM (1 << 0)	// 系统任务标志位
+#define TASK_OFILE_NR 128			// 打开文件数上限
 
 /**
  * @brief 进程控制块（PCB）：用于跟踪进程状态的数据结构
@@ -32,11 +34,12 @@ typedef struct _task_t
 
 	enum
 	{
-		TASK_CREATED, // 创建态
-		TASK_RUNNING, // 运行态
-		TASK_SLEEP,	  // 睡眠态
-		TASK_READY,	  // 就绪态
-		TASK_WAITTING // 阻塞态
+		TASK_CREATED,  // 创建态
+		TASK_RUNNING,  // 运行态
+		TASK_SLEEP,	   // 睡眠态
+		TASK_READY,	   // 就绪态
+		TASK_WAITING, // 阻塞态
+		TASK_ZOMBIE,   // 僵尸态
 	} state;
 
 	char name[TASK_NAME_SIZE];
@@ -45,6 +48,15 @@ typedef struct _task_t
 	int slice_ticks; // 计数器 = times_ticks 每发生一次定时器中断就会-1
 	int times_ticks; // 一个任务所能占用CPU的最大时间
 	int sleep_ticks; // 延迟时间，是一个递减的计数器
+
+	int pid;				// 进程ID
+	struct _task_t *parent; // 父进程
+
+	uint32_t heap_start; // 堆的顶层地址
+	uint32_t heap_end;	 // 堆结束地址
+	int status;			 // 进程执行结果
+
+	file_t *file_table[TASK_OFILE_NR];
 } task_t;
 
 /**
@@ -56,7 +68,7 @@ typedef struct _task_t
  * @param {uint32_t} entry  入口地址
  * @param {uint32_t} esp    栈顶指针
  */
-int task_init(task_t *task, const char *name, int flag,  uint32_t entry, uint32_t esp);
+int task_init(task_t *task, const char *name, int flag, uint32_t entry, uint32_t esp);
 /**
  * 从任务 from 跳转到任务 to
  */
@@ -78,6 +90,13 @@ typedef struct _task_manager_t
 	int app_data_sel; // 应用任务的数据段选择子
 
 } task_manager_t;
+
+typedef struct _task_args_t
+{
+	uint32_t ret_addr; // 返回地址，无用
+	uint32_t argc;
+	char **argv;
+} task_args_t;
 
 void task_manager_init(void);
 void task_first_init(void);
@@ -120,7 +139,25 @@ void task_set_sleep(task_t *task, uint32_t ticks);
 void task_set_wakeup(task_t *task);
 
 // 延迟时间
-void sys_sleep(uint32_t ms);
+void sys_msleep(uint32_t ms);
+// 获取当前进程pid
+int sys_getpid();
+
+// 创建进程
+int sys_fork();
 // 空闲进程初始化
 static void idle_task_entry();
+
+int sys_execv(char *name, char **argv, char **env);
+// 让出CPU
+int sys_yield();
+// 根据文件描述符fd，返回进程当前打开的文件的指针
+file_t *task_file(int fd);
+// 为进程分配一个新的文件描述符，并将指定的文件file添加到进程的文件打开表中
+int task_alloc_fd(file_t *file);
+// 从进程的文件打开表中删除指定的文件描述符fd，并关闭相应的文件。
+void task_remove_fd(int fd);
+
+void sys_exit(int status);
+int sys_wait(int *status);
 #endif

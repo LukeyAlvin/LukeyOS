@@ -64,7 +64,8 @@ typedef struct _exception_frame_t
 #define IRQ19_XM 19 // SIMD浮点异常， Floating-Point Exception,当执行SSE指令时触发。
 #define IRQ20_VE 20 // 虚拟化异常， Virtualization Exception,当执行虚拟化指令时出现错误时触发。
 
-#define IRQ0_TIMER 0x20
+#define IRQ0_TIMER 0x20	   // 定时器中断
+#define IRQ1_KEYBOARD 0x21 // 键盘输入中断
 
 // PIC控制器相关的寄存器及位配置
 #define PIC0_ICW1 0x20
@@ -88,12 +89,12 @@ typedef struct _exception_frame_t
 
 #define IRQ_PIC_START 0x20 // PIC中断起始号
 
-#define ERR_PAGE_P (1 << 0)		// 表示页面错误（Page Fault）中的存在位错误（Present）标志，该标志表示页表项是否存在的状态码
-#define ERR_PAGE_WR (1 << 1)	// 表示页面错误中的写入错误（Write）标志，该标志表示是否尝试在只读页面上进行写操作的状态码
-#define ERR_PAGE_US (1 << 1)	// 表示页面错误中的用户态错误（User/Supervisor）标志，该标志表示是否尝试在非用户态（内核态）下访问用户态页面的状态码。
+#define ERR_PAGE_P (1 << 0)	 // 表示页面错误（Page Fault）中的存在位错误（Present）标志，该标志表示页表项是否存在的状态码
+#define ERR_PAGE_WR (1 << 1) // 表示页面错误中的写入错误（Write）标志，该标志表示是否尝试在只读页面上进行写操作的状态码
+#define ERR_PAGE_US (1 << 1) // 表示页面错误中的用户态错误（User/Supervisor）标志，该标志表示是否尝试在非用户态（内核态）下访问用户态页面的状态码。
 
-#define ERR_EXT (1 << 0)	// 表示外部中断错误的标志，该标志表示外部设备向CPU发送中断信号时可能出现的错误。
-#define ERR_IDT (1 << 1)	// 表示中断描述符表错误的标志，该标志表示中断处理程序所在的中断描述符表中可能出现的错误
+#define ERR_EXT (1 << 0) // 表示外部中断错误的标志，该标志表示外部设备向CPU发送中断信号时可能出现的错误。
+#define ERR_IDT (1 << 1) // 表示中断描述符表错误的标志，该标志表示中断处理程序所在的中断描述符表中可能出现的错误
 
 // 定义在汇编里 source/kernel/init/start.S
 void exception_handler_unknown(void);

@@ -2,7 +2,7 @@
  * @Description: MMU与分布处理
  * @Author: Alvin
  * @Date: 2023-04-24 11:26:26
- * @LastEditTime: 2023-05-08 18:58:55
+ * @LastEditTime: 2023-05-23 16:07:28
  */
 #ifndef MMU_H
 #define MMU_H
@@ -11,6 +11,7 @@
 #include "common/cpu_instr.h"
 
 #define PDE_CNT 1024 // 页目录的表项个数 1024个
+#define PTE_CNT 1024 // 页表的表项个数 1024个
 #define PTE_P (1 << 0)
 #define PTE_W (1 << 1)
 #define PTE_U (1 << 2)
@@ -116,5 +117,7 @@ static inline void mmu_set_page_dir(uint32_t paddr)
     // 将该物理地址写入控制寄存器CR3中，从而更新页目录表的物理地址
     write_cr3(paddr);
 }
+
+
 
 #endif // MMU_H

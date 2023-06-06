@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kernel.dir/core/memory.c.o"
+  "CMakeFiles/kernel.dir/core/syscall.c.o"
   "CMakeFiles/kernel.dir/core/task.c.o"
   "CMakeFiles/kernel.dir/cpu/cpu.c.o"
   "CMakeFiles/kernel.dir/cpu/irq.c.o"
   "CMakeFiles/kernel.dir/dev/time.c.o"
+  "CMakeFiles/kernel.dir/file/file.c.o"
   "CMakeFiles/kernel.dir/init/first_task.c.o"
   "CMakeFiles/kernel.dir/init/first_task_entry.S.o"
   "CMakeFiles/kernel.dir/init/init.c.o"

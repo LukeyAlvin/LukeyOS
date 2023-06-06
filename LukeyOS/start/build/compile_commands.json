@@ -1,77 +1,107 @@
 [
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/boot",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.o   -c /home/os/workspace/LukeyOS/start/source/boot/boot.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/boot/boot.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/boot.dir/boot.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/boot.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/boot/boot.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/loader",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_16.c.o   -c /home/os/workspace/LukeyOS/start/source/loader/loader_16.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/loader/loader_16.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_16.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_16.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_16.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/loader",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_32.c.o   -c /home/os/workspace/LukeyOS/start/source/loader/loader_32.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/loader/loader_32.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/loader.dir/loader_32.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_32.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/loader/loader_32.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/memory.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/core/memory.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/core/memory.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/memory.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/memory.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/memory.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/task.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/core/task.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/core/task.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/syscall.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/syscall.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/syscall.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/cpu.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/cpu/cpu.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/cpu/cpu.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/core/task.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/task.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/core/task.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/irq.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/cpu/irq.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/cpu/irq.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/cpu.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/cpu/cpu.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/cpu/cpu.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/dev/time.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/dev/time.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/dev/time.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/cpu/irq.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/cpu/irq.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/cpu/irq.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/init/init.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/init/init.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/init/init.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/dev/time.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/dev/time.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/dev/time.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/mutex.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/ipc/mutex.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/ipc/mutex.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/file/file.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/file/file.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/file/file.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/sem.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/ipc/sem.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/ipc/sem.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/init/first_task.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/init/first_task.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/init/first_task.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/bitmap.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/tools/bitmap.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/tools/bitmap.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/init/init.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/init/init.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/init/init.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/klib.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/tools/klib.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/tools/klib.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/mutex.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/ipc/mutex.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/ipc/mutex.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/list.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/tools/list.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/tools/list.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/ipc/sem.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/ipc/sem.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/ipc/sem.c"
 },
 {
-  "directory": "/home/os/workspace/LukeyOS/start/build/source/kernel",
-  "command": "/usr/bin/gcc  -I/home/os/workspace/LukeyOS/start/source -I/home/os/workspace/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/log.c.o   -c /home/os/workspace/LukeyOS/start/source/kernel/tools/log.c",
-  "file": "/home/os/workspace/LukeyOS/start/source/kernel/tools/log.c"
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/bitmap.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/bitmap.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/bitmap.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/klib.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/klib.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/klib.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/list.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/list.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/list.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/kernel",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/kernel.dir/tools/log.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/log.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/tools/log.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/applib",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/app.dir/cstart.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/applib/cstart.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/applib/cstart.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/applib",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/app.dir/lib_syscall.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/applib/lib_syscall.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/applib/lib_syscall.c"
+},
+{
+  "directory": "/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/shell",
+  "command": "/usr/bin/gcc  -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/kernel/include -I/home/alvin/workspace/LukeyOS/LukeyOS/start/source/shell/../applib  -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables -g   -o CMakeFiles/shell.dir/main.c.o   -c /home/alvin/workspace/LukeyOS/LukeyOS/start/source/shell/main.c",
+  "file": "/home/alvin/workspace/LukeyOS/LukeyOS/start/source/shell/main.c"
 }
 ]

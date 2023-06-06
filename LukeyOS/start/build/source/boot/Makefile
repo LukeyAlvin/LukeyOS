@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/os/workspace/LukeyOS/start
+CMAKE_SOURCE_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/os/workspace/LukeyOS/start/build
+CMAKE_BINARY_DIR = /home/alvin/workspace/LukeyOS/LukeyOS/start/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/os/workspace/LukeyOS/start/build/CMakeFiles /home/os/workspace/LukeyOS/start/build/source/boot/CMakeFiles/progress.marks
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/os/workspace/LukeyOS/start/build/CMakeFiles 0
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles /home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/CMakeFiles/progress.marks
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvin/workspace/LukeyOS/LukeyOS/start/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/clean
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/preinstall
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/preinstall
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 source/boot/CMakeFiles/boot.dir/rule:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/CMakeFiles/boot.dir/rule
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f CMakeFiles/Makefile2 source/boot/CMakeFiles/boot.dir/rule
 .PHONY : source/boot/CMakeFiles/boot.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ boot: source/boot/CMakeFiles/boot.dir/rule
 
 # fast build rule for target.
 boot/fast:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/build
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/build
 .PHONY : boot/fast
 
 boot.o: boot.c.o
@@ -131,7 +131,7 @@ boot.o: boot.c.o
 
 # target to build an object file
 boot.c.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.o
 .PHONY : boot.c.o
 
 boot.i: boot.c.i
@@ -140,7 +140,7 @@ boot.i: boot.c.i
 
 # target to preprocess a source file
 boot.c.i:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.i
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.i
 .PHONY : boot.c.i
 
 boot.s: boot.c.s
@@ -149,7 +149,7 @@ boot.s: boot.c.s
 
 # target to generate assembly for a file
 boot.c.s:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.s
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/boot.c.s
 .PHONY : boot.c.s
 
 start.o: start.S.o
@@ -158,7 +158,7 @@ start.o: start.S.o
 
 # target to build an object file
 start.S.o:
-	cd /home/os/workspace/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/start.S.o
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(MAKE) -f source/boot/CMakeFiles/boot.dir/build.make source/boot/CMakeFiles/boot.dir/start.S.o
 .PHONY : start.S.o
 
 # Help Target
@@ -185,6 +185,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/os/workspace/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/alvin/workspace/LukeyOS/LukeyOS/start/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

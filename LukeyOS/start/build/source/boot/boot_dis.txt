@@ -1,6 +1,6 @@
 
-/home/os/workspace/LukeyOS/start/build/source/boot/boot.elf:     file format elf32-i386
-/home/os/workspace/LukeyOS/start/build/source/boot/boot.elf
+/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/boot.elf:     file format elf32-i386
+/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/boot/boot.elf
 architecture: i386, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
 start address 0x00007c00
@@ -29,11 +29,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
   5 .debug_abbrev 00000042  00000000  00000000  00000ece  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  6 .debug_line   000000e1  00000000  00000000  00000f10  2**0
+  6 .debug_line   000000f7  00000000  00000000  00000f10  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  7 .debug_frame  00000034  00000000  00000000  00000ff4  2**2
+  7 .debug_frame  00000034  00000000  00000000  00001008  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  8 .debug_str    0000014f  00000000  00000000  00001028  2**0
+  8 .debug_str    00000170  00000000  00000000  0000103c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 00007c00 l    d  .text	00000000 .text

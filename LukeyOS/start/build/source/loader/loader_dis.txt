@@ -1,6 +1,6 @@
 
-/home/os/workspace/LukeyOS/start/build/source/loader/loader.elf:     file format elf32-i386
-/home/os/workspace/LukeyOS/start/build/source/loader/loader.elf
+/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/loader.elf:     file format elf32-i386
+/home/alvin/workspace/LukeyOS/LukeyOS/start/build/source/loader/loader.elf
 architecture: i386, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
 start address 0x00008000
@@ -31,17 +31,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000060  00000000  00000000  00005030  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  6 .debug_info   000009f2  00000000  00000000  00005090  2**0
+  6 .debug_info   000009eb  00000000  00000000  00005090  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  7 .debug_abbrev 000003da  00000000  00000000  00005a82  2**0
+  7 .debug_abbrev 000003da  00000000  00000000  00005a7b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  8 .debug_line   0000053c  00000000  00000000  00005e5c  2**0
+  8 .debug_line   00000573  00000000  00000000  00005e55  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  9 .debug_frame  00000328  00000000  00000000  00006398  2**2
+  9 .debug_frame  00000328  00000000  00000000  000063c8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_str    000004b6  00000000  00000000  000066c0  2**0
+ 10 .debug_str    000004e2  00000000  00000000  000066f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_ranges 00000018  00000000  00000000  00006b76  2**0
+ 11 .debug_ranges 00000018  00000000  00000000  00006bd2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 00008000 l    d  .text	00000000 .text
